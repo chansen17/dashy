@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/loginstyles.8ecbc7df.css">
+    <script src="https://kit.fontawesome.com/bee9d8d03c.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+<script src="/loginstyles.8ecbc7df.js"></script></head>
+<body>
+
+    
+
+    <main>
+        
+        <div id="welcomeContainer">
+            <h1>Welcome to <span>Dashy</span></h1>
+            <p>Your one stop internal employee resource</p>
+            <p>Get all the necessary information on company employees including email, department, phone numbers, etc.</p>
+
+            <form>
+                <input type="text" id="username" placeholder="Enter login id" required="">
+                <input type="password" id="password" placeholder="Enter password" required="">
+                <!-- on error -->
+                <div id="loginError">
+                    <small>Make sure username is greater than or equal 5 characters & password is greater than or equal to 8 characters.</small>
+                </div>
+            </form>
+            <button id="loginBtn">Login</button>
+        </div>
+
+
+
+    </main>
+    
+    <script>var loginBtn = document.getElementById('loginBtn');
+var loginModal = document.getElementById('loginModal');
+var dashboardBtn = document.getElementById('dashboardBtn');
+var welcomeContainer = document.getElementById('welcomeContainer');
+var loginId = document.getElementById('username');
+var password = document.getElementById('password');
+loginBtn.addEventListener('click', function () {
+  if (username.value.length >= 5 & password.value.length > 8) {
+    alert('Login success, redirecting to your Dashboard');
+    location.href = "./dashboard.html";
+  } else {
+    loginError.style.display = "block";
+  }
+});</script>
+</body>
+</html>

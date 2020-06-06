@@ -1,0 +1,189 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  background: #222;
+}
+
+main {
+  margin-left: 5em;
+}
+
+.navbar {
+  position: fixed;
+  background: #333;
+  transition: 0.2s ease;
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.logo {
+  color: #28b862;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1em;
+  align-items: center;
+}
+
+.nav-item {
+  width: 100%;
+}
+
+.nav-item:last-child {
+  margin-top: auto;
+}
+
+.nav-link {
+  font-size: 1.15em;
+  display: flex;
+  align-items: center;
+  height: 5em;
+  color: #eee;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+.nav-link .link-text {
+  display: none;
+  margin-left: 1em;
+  text-transform: capitalize;
+}
+.nav-link i {
+  min-width: 2em;
+  margin: 0 1.5em;
+}
+
+.nav-item:hover .nav-link {
+  background: #222;
+}
+
+.nav-item:hover i {
+  color: #28b862;
+}
+
+@media only screen and (max-width: 390px) {
+  .nav-link i {
+    min-width: 1em;
+    margin: 0 1em;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .nav-item:last-child {
+    margin-top: 0;
+  }
+
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5em;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+  }
+
+  .nav-link {
+    justify-content: center;
+  }
+
+  .nav-item {
+    font-size: 0.75em;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  main {
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .navbar {
+    top: 0;
+    height: 100vh;
+    width: 5em;
+  }
+
+  .navbar:hover {
+    width: 16em;
+  }
+
+  .navbar:hover .link-text {
+    display: block;
+  }
+
+  .nav-item:hover i {
+    transform: scale(1.5);
+    transition: 0.2s ease;
+  }
+}
+.banner {
+  height: 60vh;
+  width: 100%;
+  background: #eee;
+}
+.banner .banner-head, .banner .banner-body {
+  padding: 2em;
+}
+.banner .banner-head {
+  height: auto;
+  height: 15vh;
+}
+.banner .banner-head h1 {
+  color: purple;
+  font-weight: bold;
+  font-size: 3em;
+}
+.banner .banner-head p {
+  font-size: 1.15em;
+}
+.banner .banner-body {
+  height: 45vh;
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.banner .banner-body .panel {
+  background: #fff;
+}
+
+#profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 25px auto;
+}
+#profile .img-container {
+  height: 100px;
+  width: 100%;
+}
+#profile .img-container img {
+  height: 100%;
+  width: auto;
+}
+#profile h2 {
+  color: purple;
+  margin-top: 0.5em;
+  letter-spacing: 1px;
+}
+
+/*# sourceMappingURL=/styles.164d45a1.css.map */
