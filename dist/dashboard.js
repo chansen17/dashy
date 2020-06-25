@@ -117,81 +117,74 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"app.js":[function(require,module,exports) {
-var url = 'https://cors-anywhere.herokuapp.com/https://randomuser.me/api/?results=30';
+})({"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+var bundleURL = null;
 
-(function () {
-  fetch(url).then(function (response) {
-    response.json().then(function (data) {
-      console.log(data);
-      var users = data.results;
-      var singleUser = users[0];
-      singleUser = {
-        fName: singleUser.name.first,
-        lName: singleUser.name.last,
-        email: singleUser.email,
-        cell: singleUser.cell,
-        src: singleUser.picture.large,
-        login: singleUser.login.username,
-        location: {
-          city: singleUser.location.city,
-          state: singleUser.location.state,
-          country: singleUser.location.country
-        }
-      };
-      var imageContainer = document.querySelector('#imgContainer');
-      var profileCard = document.createElement("IMG");
-      profileCard.setAttribute("src", singleUser.src);
-      profileCard.setAttribute("alt", singleUser.name);
-      imageContainer.appendChild(profileCard);
-      document.querySelector('#name').innerHTML = "".concat(singleUser.fName, " ").concat(singleUser.lName);
-      document.querySelector('#loginUserName').innerHTML = "<i class=\"fas fa-user\"></i> ".concat(singleUser.login); // employee information
+function getBundleURLCached() {
+  if (!bundleURL) {
+    bundleURL = getBundleURL();
+  }
 
-      var employeeDetails = document.querySelector('#employeeDetails');
-      var cell = document.querySelector('#cell');
-      var email = document.querySelector('#email');
-      var city = document.querySelector('#city');
-      var country = document.querySelector('#country');
-      var state = document.querySelector('#state');
-      console.log(singleUser);
-      email.innerHTML = "<i class=\"far fa-envelope\"></i> ".concat(singleUser.email);
-      cell.innerHTML = "<i class=\"fas fa-mobile-alt\"></i> ".concat(singleUser.cell);
-      city.innerHTML = "<i class=\"fas fa-city\"></i> ".concat(singleUser.location.city);
-      state.innerHTML = "<i class=\"far fa-flag\"></i> ".concat(singleUser.location.state);
-      country.innerHTML = "<i class=\"fas fa-globe-americas\"></i> ".concat(singleUser.location.country); // Contact information
+  return bundleURL;
+}
 
-      var contactDetails = document.querySelector('#contactDetails');
-      var emailAction = document.querySelector('#emailAction');
-      var callAction = document.querySelector('#callAction');
-      emailAction.querySelector('button').addEventListener('click', function () {
-        alert("Emailing: ".concat(singleUser.fName, " ").concat(singleUser.lName));
-      });
-      emailAction.querySelector('span').innerHTML = "".concat(singleUser.fName);
-      callAction.querySelector('button').addEventListener('click', function () {
-        alert("Calling: ".concat(singleUser.fName, " ").concat(singleUser.lName));
-      });
-      callAction.querySelector('span').innerHTML = "".concat(singleUser.fName);
-      var emailModal = document.querySelector("#emailModal");
-      var composeEmail = document.querySelector("#composeEmail");
-      composeEmail.addEventListener('click', function () {
-        emailModal.style.display = "flex";
-      }); // send email button
+function getBundleURL() {
+  // Attempt to find the URL of the current script and use that as the base URL
+  try {
+    throw new Error();
+  } catch (err) {
+    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
 
-      var sendEmailBtn = document.querySelector('#sendEmailBtn');
-      sendEmailBtn.addEventListener('click', function (e) {
-        e.preventDefault();
-        alert('Email sent');
-        emailModal.style.display = "none";
-      }); // refresh btn
+    if (matches) {
+      return getBaseURL(matches[0]);
+    }
+  }
 
-      var newUserBtn = document.querySelector('#newUserBtn');
-      newUserBtn.addEventListener('click', function () {
-        location.reload();
-      });
-    });
-  });
-})();
-},{}],"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+  return '/';
+}
+
+function getBaseURL(url) {
+  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
+}
+
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+},{}],"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+var bundle = require('./bundle-url');
+
+function updateLink(link) {
+  var newLink = link.cloneNode();
+
+  newLink.onload = function () {
+    link.remove();
+  };
+
+  newLink.href = link.href.split('?')[0] + '?' + Date.now();
+  link.parentNode.insertBefore(newLink, link.nextSibling);
+}
+
+var cssTimeout = null;
+
+function reloadCSS() {
+  if (cssTimeout) {
+    return;
+  }
+
+  cssTimeout = setTimeout(function () {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+
+    for (var i = 0; i < links.length; i++) {
+      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
+        updateLink(links[i]);
+      }
+    }
+
+    cssTimeout = null;
+  }, 50);
+}
+
+module.exports = reloadCSS;
+},{"./bundle-url":"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -394,5 +387,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","app.js"], null)
-//# sourceMappingURL=/app.c328ef1a.js.map
+},{}]},{},["../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
+//# sourceMappingURL=/dashboard.js.map

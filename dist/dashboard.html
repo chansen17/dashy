@@ -49,14 +49,14 @@
             <li class="nav-item">
                 <a href="#" class="nav-link">
                     <i class="fas fa-rocket"></i>
-                    <span class="link-text">About</span>
+                    <span class="link-text">Support</span>
                 </a>
             </li>
 
             <li class="nav-item">
                 <a href="#" class="nav-link">
                     <i class="far fa-newspaper"></i>
-                    <span class="link-text">Support</span>
+                    <span class="link-text">Logout</span>
                 </a>
             </li>
         </ul>
@@ -69,32 +69,71 @@
                 <h1>Dashboard</h1>
                 <p>Welcome to the internal employee resource dashboard</p>
                 <p>You'll find everything you need to maintain proper contact with anyone in the company.</p>
+                <button id="newUserBtn"><i class="fas fa-users"> New user</i></button>
             </div>
             <div class="banner-body">
                 <div class="panel">
                     <div id="profile" class="profile">
-                        <h3>profile</h3>
+                        <h2 id="name">LOADING..</h2>
+                        <br>
+                        <span id="loginUserName"></span>
                         <div class="inner">
-                            <div class="img-container">
-                                <img src="" alt="profile image" id="profImg">
+                            <div class="img-container" id="imgContainer">
+                                <br>
+                                <!-- <img src="" alt="profile image" id="profImg"> -->
                             </div>
-                            <h2 id="name"></h2>
                         </div>
                     </div>
                 </div>
                 <div class="panel">
                     <div id="employeeDetails" class="employee-details">
-                        <h3>employee</h3>
+                        <h2>employee Information</h2>
+                        <ul>
+                            <li id="email">loading..</li>
+                            <li id="cell">loading..</li>
+                            <br>
+                            <li id="city">loading..</li>
+                            <li id="country">loading..</li>
+                            <li id="state">loading..</li>
+                        </ul>
+                        
                     </div>
                 </div>
                 <div class="panel">
                     <div id="contactDetails" class="contact-details">
-                        <h3>contact</h3>
+                        <h2>contact actions for {user}</h2>
+
+                        <div class="contact-action" id="emailAction">
+                            <button id="composeEmail"><a href="#"><i class="fas fa-envelope"></i></a></button>
+                            <span></span>
+                        </div>
+                        <div class="contact-action" id="callAction">
+                            <button><a href="#"><i class="fas fa-phone"></i></a></button>
+                            <span></span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- modal -->
+        <div id="emailModal" class="modal">
+            <form id="emailForm">
+                <label for="name">Your name</label>
+                <input type="text" id="name" required="">
+
+                <label for="email">Your email</label>
+                <input type="email" id="email" required="">
+
+                <label for="email">Subject</label>
+                <input type="text" id="subject" required="">
+
+                <label for="message">Your Message</label>
+                <textarea name="message" id="message" cols="30" rows="10" required=""></textarea>
+
+                <button id="sendEmailBtn" type="">Send Email</button>
+            </form>
+        </div>
     </main>
     
     <script src="/app.c328ef1a.js"></script>

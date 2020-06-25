@@ -44,14 +44,13 @@
 
         loginBtn.addEventListener('click', function() {
         
-        if(username.value.length >= 5 & password.value.length > 8 ) {
+        if(username.value.length >= 5 && password.value.length > 8 ) {
             alert('Login success, redirecting to your Dashboard');
             location.href = "./dashboard.html"
         } else {
             loginError.style.display = "block";
         }
-    })
-
+    });
     </script>
 </body>
 </html>
