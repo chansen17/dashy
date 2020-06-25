@@ -96,8 +96,14 @@ const url = 'https://cors-anywhere.herokuapp.com/https://randomuser.me/api/?resu
             let newUserBtn = document.querySelector('#newUserBtn');
             newUserBtn.addEventListener('click', function() {
                 location.reload();
-            })
-            
+            });
         })
     })
 })();
+
+
+
+let logOutBtn = document.querySelector('#logout');
+logOutBtn.addEventListener('click', function() {
+    alert('Logout successful');
+});

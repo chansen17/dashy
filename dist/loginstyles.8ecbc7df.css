@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Oswald&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -11,6 +12,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  font-family: "Lato", sans-serif, Arial, Helvetica, sans-serif;
 }
 
 #welcomeContainer {
@@ -20,9 +22,10 @@ body {
 #welcomeContainer h1 {
   font-size: 3em;
   margin-bottom: 0.5em;
+  font-family: "Oswald", "Lato", sans-serif, Arial, Helvetica, sans-serif;
 }
 #welcomeContainer h1 span {
-  color: purple;
+  color: rgba(18, 218, 108, 0.9);
   letter-spacing: 2px;
   font-size: 1.5em;
 }
